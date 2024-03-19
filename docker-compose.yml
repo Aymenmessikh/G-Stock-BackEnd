@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  spring-app:
+    image: g-stock:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/SGS
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=aymenmessikh2002
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: SGS
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: aymenmessikh2002
+    ports:
+      - "5432:5432"
